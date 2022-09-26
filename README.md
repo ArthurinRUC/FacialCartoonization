@@ -46,7 +46,7 @@ python test.py --model_version 49 --batch 500
 
 ![image](https://github.com/ArthurinRUC/FacialCartoonization/blob/main/image/model2.jpg)
 
-![image-20220926131645696](https://github.com/ArthurinRUC/FacialCartoonization/tree/main/image/model1)
+![image-20220926131645696](image/model1.jpg)
 
 其中生成器（及其子结构）和判别器架构如下图所示。
 
