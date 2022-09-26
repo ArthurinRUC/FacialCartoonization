@@ -50,9 +50,9 @@ python test.py --model_version 49 --batch 500
 
 其中生成器（及其子结构）和判别器架构如下图所示。
 
-![image-20220926131729998](/Users/arthur/Library/Application Support/typora-user-images/image-20220926131729998.png)
+![image-20220926131729998](image/Geng.jpg)
 
-![image-20220926131735204](/Users/arthur/Library/Application Support/typora-user-images/image-20220926131735204.png)
+![image-20220926131735204](image/Disc.jpg)
 
 #### 损失函数
 
@@ -63,18 +63,23 @@ $$
 \mathcal{L}_{content}(G,D) = \mathbb{E}_{x_i \sim S_{data}(x)}  ||VGG_{19}(G(x_i)) - VGG_{19}(x_i)||
 \end{equation}
 $$
+
 此外，为去除生成图像的椒盐噪声，我们还约束了生成图像的相邻像素值之差，使得相邻像素点具有一定的连续性，避免出现异常像素点：
+
 $$
 \begin{equation}
 \mathcal{L}_{variance}(G,D) = \mathbb{E}_{x_i \sim S_{data}(x)}  \dfrac{\nabla_x G(x_i) + \nabla_y G(x_i)}{C * H * W}
 \end{equation}
 $$
+
 模型整体的损失函数由以上六种损失函数的加权平均组成。
+
 $$
 \begin{equation}
 \mathcal{L} = \lambda_1 \cdot \mathcal{L}_{content} +\lambda_2 \cdot \mathcal{L}_{variance} +\lambda_3 \cdot \mathcal{L}_{landmark} +\lambda_4 \cdot \mathcal{L}_{structure} +\lambda_5 \cdot \mathcal{L}_{texture} +\lambda_6 \cdot \mathcal{L}_{surface}
 \end{equation}
 $$
+
 通过调节不同部分损失函数的权重，我们可以灵活控制生成卡通人脸像特征。在实验部分，我们将调整部分权重并进行消融实验，进一步展现各类特征是如何体现在图像上的。
 
 #### 实验设计
@@ -86,11 +91,11 @@ $$
 
 #### 模型结果
 
-![image-20220926132308501](/Users/arthur/Library/Application Support/typora-user-images/image-20220926132308501.png)
+![image-20220926132308501](image/result1.jpg)
 
-![image-20220926132315851](/Users/arthur/Library/Application Support/typora-user-images/image-20220926132315851.png)
+![image-20220926132315851](image/result2.jpg)
 
-![image-20220926132323790](/Users/arthur/Library/Application Support/typora-user-images/image-20220926132323790.png)
+![image-20220926132323790](image/result3.jpg)
 
 ## 4.参考文献
 
