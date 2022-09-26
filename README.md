@@ -76,7 +76,7 @@ $$
 
 $$
 \begin{equation}
-\mathcal{L} = \lambda_1 \cdot \mathcal{L}_{content} +\lambda_2 \cdot \mathcal{L}_{variance} +\lambda_3 \cdot \mathcal{L}_{landmark} +\lambda_4 \cdot \mathcal{L}_{structure} +\lambda_5 \cdot \mathcal{L}_{texture} +\lambda_6 \cdot \mathcal{L}_{surface}
+\mathcal{L} = \lambda_1 \cdot \mathcal{L}_{content} +\lambda_2 \cdot \mathcal{L}_{variance} +\lambda_3 \cdot \mathcal{L}_{landmark} +\lambda_4 \cdot \mathcal{L}_{structure} +\lambda_5 \cdot \mathcal{L}_{texture} +\lambda_6 \cdot {\mathcal{L}}_{surface}
 \end{equation}
 $$
 
